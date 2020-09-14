@@ -2,27 +2,76 @@
 	<head>
 		<link rel="stylesheet" href="styles/style.css">
 		<link rel="stylesheet" href="styles/iconstyle.css">
-		<script src="js/JS.js"></script>
 		<script src="js/jquery-3.5.0.min.js"></script>
+		<script src="js/JS.js"></script>
 	</head>
 	<body>
 		<div class="header">
 			<div class="sitename">
-				Очень оигинальное название сайта
+				Очень оригинальное название сайта
 			</div>
 			<div class="login">
 				Логин/Регистрация
 			</div>
 		</div>
 		<div class="content">
-			Красивая картиночка
-		</div>
-		<div class="popup">
-			<div class="cover"></div>
-			<div class="login-content">
-				<div class="close-block">
-					<>
+			<div class='saySomeWords'>
+				Текст: <span class='result'>***</span>
+				<div>
+					<textarea class='data'></textarea>
 				</div>
+				<div>
+					<input type='button' value='Посчитать' class='process' />
+				</div>
+			</div>
+			<div class='number'>
+				Номер: <span class='result'>***</span>
+				<div>
+					<input type='text' placeholder='Enter number' class='data' />
+				</div>
+				<div>
+					<input type='button' value='Проверить скобки' class='process' />
+				</div>
+			</div>
+			<div class='coin'>
+				Монетки: <span class='result'>***</span>
+				<div>
+					<input type='number' placeholder='Enter number' class='data' />
+				</div>
+				<div>
+					<input type='button' value='Encrypt' class='process' />
+				</div>
+			</div>
+			<div class='incrypt'>
+				Шифрование
+				<span class='result'>***</span>
+				<div>
+					<input type='number' placeholder='Enter number' class='data' />
+				</div>
+				<div>
+					<input type='button' value='Encrypt' class='process' />
+				</div>
+			</div>
+		</div>
+			<div class='login-popup'>
+			<div class='cover'></div>
+			<div class='login-content'>
+				<div class='close-block'>
+					<span class='icon close'></span>
+				</div>
+				<div>
+					<div>
+						<input type='text' placeholder='Login' />
+					</div>
+					<div>
+						<input type='password' placeholder='Password' />
+					</div>
+					<div>
+						<input type='button' value='login' />
+						<input type='button' value='registration' />
+					</div>
+				</div>
+				<div class='empty'></div>
 			</div>
 		</div>
 	</body>
