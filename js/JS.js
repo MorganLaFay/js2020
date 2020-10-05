@@ -16,6 +16,87 @@ $(document).ready(function(){
 		}
 		return true;		
 	}
+	
+	
+	$('.uniq .process') .click(function(){
+		
+		var symbols = $('.uniq .data').val().split('');
+		var answer = isUniq(symbols);
+		$('.uniq .result')[0].innerHTML  = answer;
+		
+		//$('.uniq .result').text(answer);
+	});
+	
+	function isUniq(symbols) {
+		 var uniqSymbols = [];
+		
+		 for(var i = 0; i <symbols.length; i++){
+			 var symbol = symbols[i];
+			 
+			 if (uniqSymbols.indexOf(symbol) < 0){
+				 uniqSymbols.push(symbol);
+			 }
+		}
+		 
+		 return uniqSymbols;
+	}
+	
+	$('.findCouple .process') .click(function(){
+		
+		var number = $('.findCouple .data').val().split('');
+		var answer = isFindCouple(number);
+		$('.findCouple .result')[0].innerHTML  = answer;
+		
+	});	
+	
+	function isFindCouple(arr){
+		var num = 10;
+		var answer = [];
+		
+		for (var i = 0; i < arr.length; i++){
+			var first = arr[i] - 0;
+			for (var j = i + 1; j <arr.length; j++){
+				var second = arr[j] - 0;
+				if (first + second == num){
+					answer.push(arr[i] + ' и ' + arr[j]);
+				}
+			}
+		}
+		
+		return answer;
+		
+	}
+	
+	$('.ana .process').click(function(){
+		var data1 = $('.ana .data1').val();
+		var data2 = $('.ana .data2').val();
+		
+		var answer = checkAnn(data1, data2);
+		
+		$('.ana .result').text(answer);
+	});
+	
+	function checkAnn(word1, word2){
+		if (word1.length != word2.length){
+			return false;
+		}
+		
+		var arr1 = word1.split('');
+		var arr2 = word2.split('');
+		
+		arr1.sort();
+		arr2.sort();
+		
+		for(var i = 0; i < arr1.length; i++){
+			if (arr1[i] != arr2[i]){
+				return false;
+			}
+		}
+		
+		return true;
+	}
+	
+	
 	$('.fibonacci .process') .click(function(){
 		
 		var data = $('.fibonacci .data') .val();
