@@ -1,0 +1,43 @@
+body{
+	margin: 0;
+	padding: 0;
+}
+.main{
+	display: flex;
+	height: 100vh;
+}
+
+.content{
+	display: flex;
+    flex-wrap: wrap;
+	flex: 1;
+}
+
+.left-menu{
+	width: 180px;
+	background: red;
+	padding: 5px;
+}
+
+.goods{
+	border: 1px #ccc solid;
+	width: 200px;
+	height: 200px;
+	display: flex;
+    flex-direction: column;
+}
+
+.goods div{
+	display: flex;
+    justify-content: center;
+}
+
+.goods .image{
+	align-items: center;
+	flex: 1;
+}
+
+.goods .image img{
+	max-width: 158px;
+	max-height: 158px;
+}
