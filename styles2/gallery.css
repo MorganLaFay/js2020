@@ -41,3 +41,46 @@ body{
 	max-width: 158px;
 	max-height: 158px;
 }
+.slider{
+	height: 500px;
+	width: 500px;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.slider img{
+	max-height: 100%;
+	max-width: 100%;
+}
+.slider .button{
+	cursor: pointer;
+    position: absolute;
+    display: flex;
+    align-items: center;    
+    width: 500px;
+    height: 500px;
+}
+.slider .stepBack,
+.slider .stepForward{
+	width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.slider .stepForward{
+	justify-content: flex-end;
+}
+.slider .stepForward:hover,
+.slider .steBack:hover{
+	font-size: 30px;
+	color: red;
+}
+
+.slider .stepBack:hover .icon.left{
+	background-image: url(../img/lefthover.png);
+}
+.slider .stepForward:hover .icon.right{
+	background-image: url(../img/righthover.png);
+}
+

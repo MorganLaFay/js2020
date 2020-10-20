@@ -1,20 +1,71 @@
 $(document).ready(function(){
 	var goods = [
 		{
+			id: 1,
 			name: 'Blond',
 			url: 'img/White.jpg'
 		},
 		{
+			id:2,
 			name: 'Red',
 			url: 'img/Red.jpg'
 		},
+		{
+			id:3,
+			name: 'black',
+			url: 'img/black.jpeg'
+		},
+		{
+			id:4,
+			name: 'gold',
+			url: 'img/gold.jpg'
+		},
+		{
+			id:5,
+			name: 'metal',
+			url: 'img/metal.jpg'
+		},
 	];
+	
+	var curentId = 4;
+	
+	var sliderLength = 3;
+	
+	drawGoods();
+	updateSlider();
+	
+	$('.stepForward').click(function(){
+		curentId++;
+		curentId = calcIndex(curentId);
+		updateSlider();
+	});
+	$('.stepBack').click(function(){
+		curentId--;
+		curentId = calcIndex(curentId);
+		updateSlider();
+	});
+	
+	function updateSlider(){
+		var good = goods[curentId];
+		$('.center-image').attr('src', good.url);
+	}
+	function calcIndex(index){
+		index %= goods.length;
+		if (index < 0){
+			index += goods.length;
+		}
+		
+		return index;
+	}
+	
+	
 	
 	$('.goods.first .add').click(function(){
 		var newName = $('.goods.first .new-image-name').val();
 		var newUrl = $('.goods.first .new-image-url').val();
 		
 		var good = {
+			id: goods.sort((a,b) => b.id - a.id)[0].id + 1, 
 			name: newName,
 			url: newUrl
 		};
