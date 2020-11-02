@@ -34,6 +34,36 @@ $(document).ready(function(){
 	drawGoods();
 	updateSlider();
 	
+	function addTimer(){
+		var current = $('.timer').data('second') - 0;
+		current++;
+		$('.timer').data('second', current);
+		$('.timer').text(current);
+	}
+	
+	setInterval(addTimer, 1000);
+	
+	 $('.minislider').click(function(){
+		 $('.yellow').animate({
+			 width: '+=400px',
+		 },
+		 5 * 1000);
+		 
+		$('.blue').animate({
+			width: '-=400px',
+		},
+		5 * 1000,
+		afterblueYellow);	
+		
+	 });
+	
+	function afterblueYellow(){
+		$('.blue').css('width', 400);
+		$('.yellow').css('width', 0);
+		
+		$('.blue img').attr('src', 'img/Red.jpg')
+	}
+	
 	$('.stepForward').click(function(){
 		curentId++;
 		curentId = calcIndex(curentId);
